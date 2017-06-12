@@ -1,3 +1,4 @@
+﻿<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -23,7 +24,12 @@ if(isset($_POST['id'],$_POST['pass']) && strlen($_POST['id'])>0 )
   $id = $_POST['id'];
   $pass = $_POST['pass'];
   if(isset($login[$id]) && $login[$id]['pass'] == $pass)
+  {
     print('Welcome');
+    $_SESSION['id'] = $id;
+    $_SESSION['name'] $login[$id]['name'];
+    var_dump($_SESSION);
+   }
   else {
     print('Wrong Password');
   }
